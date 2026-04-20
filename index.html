@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Professional Pomodoro Timer - Boost your productivity with customizable focus sessions">
+    <title>EM Me Focus</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" type="image/png" href="favicon_new.png">
+    <link rel="apple-touch-icon" href="favicon_new.png">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-top">
+                <img src="logo_new.png" alt="EM Me Focus Logo" class="logo-icon">
+                <h1>EM Me Focus</h1>
+                <button class="theme-toggle" id="themeToggleBtn" aria-label="Toggle Dark/Light Mode">
+                    <svg class="sun-icon hidden" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="2"/>
+                        <path d="M12 2V4M12 20V22M4 12H2M22 12H20M19.0711 19.0711L17.6569 17.6569M6.34315 6.34315L4.92893 4.92893M19.0711 4.92893L17.6569 6.34315M6.34315 17.6569L4.92893 19.0711" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                    <svg class="moon-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+            </div>
+            <p class="tagline">Master your time, master your mind</p>
+        </header>
+
+        <!-- Main Timer Section -->
+        <main class="main-content">
+            <div class="timer-card glass-panel">
+                <!-- Custom Time Input -->
+                <div class="time-input-section">
+                    <h3 class="time-input-title">Set Timer Duration</h3>
+                    <div class="time-input-grid">
+                        <!-- Hours -->
+                        <div class="time-input-unit">
+                            <label class="time-label">Hours</label>
+                            <div class="time-control">
+                                <button class="time-btn" id="decreaseHours">−</button>
+                                <input type="number" id="hoursInput" class="time-input" min="0" max="24" value="0" />
+                                <button class="time-btn" id="increaseHours">+</button>
+                            </div>
+                        </div>
+
+                        <!-- Minutes -->
+                        <div class="time-input-unit">
+                            <label class="time-label">Minutes</label>
+                            <div class="time-control">
+                                <button class="time-btn" id="decreaseMinutes">−</button>
+                                <input type="number" id="minutesInput" class="time-input" min="0" max="59" value="25" />
+                                <button class="time-btn" id="increaseMinutes">+</button>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="set-time-btn" id="setTimeBtn">Set Timer</button>
+                </div>
+
+
+                <!-- Circular Progress Timer -->
+                <div class="timer-display">
+                    <svg class="progress-ring" viewBox="0 0 300 300">
+                        <defs>
+                            <linearGradient id="progressGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#10b981;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#059669;stop-opacity:1" />
+                            </linearGradient>
+                            <filter id="glow">
+                                <feGaussianBlur stdDeviation="4" result="coloredBlur" />
+                                <feMerge>
+                                    <feMergeNode in="coloredBlur" />
+                                    <feMergeNode in="SourceGraphic" />
+                                </feMerge>
+                            </filter>
+                        </defs>
+                        <!-- Background Circle -->
+                        <circle class="progress-ring-bg" cx="150" cy="150" r="130" />
+                        <!-- Progress Circle -->
+                        <circle class="progress-ring-circle" cx="150" cy="150" r="130" />
+                    </svg>
+                    <div class="timer-text">
+                        <div class="time-display" id="timeDisplay">25:00</div>
+                        <div class="timer-status" id="timerStatus">Ready to focus</div>
+                    </div>
+                </div>
+
+                <!-- Control Buttons -->
+                <div class="controls">
+                    <button class="control-btn secondary-btn" id="resetBtn">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M4 12C4 7.58172 7.58172 4 12 4C14.5264 4 16.7792 5.17107 18.2454 7M20 12C20 16.4183 16.4183 20 12 20C9.47362 20 7.22075 18.8289 5.75463 17"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                            <path d="M18 3V7H14" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path d="M6 21V17H10" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                        Reset
+                    </button>
+                    <button class="control-btn primary-btn" id="startPauseBtn">
+                        <svg class="play-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8 5V19L19 12L8 5Z" fill="currentColor" />
+                        </svg>
+                        <svg class="pause-icon hidden" viewBox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <rect x="6" y="4" width="4" height="16" fill="currentColor" />
+                            <rect x="14" y="4" width="4" height="16" fill="currentColor" />
+                        </svg>
+                        <span id="btnText">Start</span>
+                    </button>
+                    <button class="control-btn secondary-btn" id="fullscreenBtn">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M8 3H5C3.89543 3 3 3.89543 3 5V8M21 8V5C21 3.89543 20.1046 3 19 3H16M16 21H19C20.1046 21 21 20.1046 21 19V16M3 16V19C3 20.1046 3.89543 21 5 21H8"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                        Fullscreen
+                    </button>
+                </div>
+            </div>
+
+            <!-- Fullscreen Timer Overlay -->
+            <div class="fullscreen-overlay hidden" id="fullscreenOverlay">
+                <button class="fullscreen-close" id="fullscreenClose">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                    </svg>
+                </button>
+                <div class="fullscreen-timer">
+                    <div class="flip-clock" id="flipClock">
+                        <div class="flip-unit">
+                            <div class="flip-card">
+                                <span class="flip-number" id="fs-hours">00</span>
+                            </div>
+                            <div class="flip-label">Hours</div>
+                        </div>
+                        <div class="flip-separator">:</div>
+                        <div class="flip-unit">
+                            <div class="flip-card">
+                                <span class="flip-number" id="fs-minutes">25</span>
+                            </div>
+                            <div class="flip-label">Minutes</div>
+                        </div>
+                        <div class="flip-separator">:</div>
+                        <div class="flip-unit">
+                            <div class="flip-card">
+                                <span class="flip-number" id="fs-seconds">00</span>
+                            </div>
+                            <div class="flip-label">Seconds</div>
+                        </div>
+                    </div>
+
+                    <div class="landscape-wrap">
+                        <div class="fullscreen-status" id="fullscreenStatus">Ready to focus</div>
+                        <div class="fullscreen-controls">
+                            <button class="fs-control-btn" id="fsStartPause">
+                                <svg class="fs-play-icon" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M8 5V19L19 12L8 5Z" fill="currentColor" />
+                                </svg>
+                                <svg class="fs-pause-icon hidden" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="6" y="4" width="4" height="16" fill="currentColor" />
+                                    <rect x="14" y="4" width="4" height="16" fill="currentColor" />
+                                </svg>
+                            </button>
+                            <button class="fs-control-btn" id="fsReset">
+                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M4 12C4 7.58172 7.58172 4 12 4C14.5264 4 16.7792 5.17107 18.2454 7M20 12C20 16.4183 16.4183 20 12 20C9.47362 20 7.22075 18.8289 5.75463 17"
+                                        stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ambient Sound & Music Section -->
+            <div class="ambient-sound-section glass-panel">
+                <!-- Rain Sound Toggle -->
+                <button class="ambient-toggle-btn" id="rainToggle">
+                    <svg class="rain-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M12 3C12 3 8 8 8 11C8 13.2091 9.79086 15 12 15C14.2091 15 16 13.2091 16 11C16 8 12 3 12 3Z"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M7 17L6 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                        <path d="M12 17L11 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                        <path d="M17 17L16 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                        <path d="M9 20L8 22" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                        <path d="M15 20L14 22" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                    </svg>
+                    <span class="ambient-text">
+                        <span class="ambient-label">Ambient Rain</span>
+                        <span class="ambient-status" id="rainStatus">Off</span>
+                    </span>
+                    <div class="toggle-switch">
+                        <div class="toggle-slider"></div>
+                    </div>
+                </button>
+
+                <!-- Spotify Music Section -->
+                <div class="spotify-section">
+                    <div class="spotify-header">
+                        <svg class="spotify-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" />
+                            <path d="M8 10C10 9 14 9 16 10M8 13C10 12 14 12 16 13M9 16C10.5 15.5 13.5 15.5 15 16"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                        </svg>
+                        <h3>Focus Music</h3>
+                    </div>
+                    <iframe style="border-radius:12px"
+                        src="https://open.spotify.com/embed/playlist/6zCID88oNjNv9zx6puDHKj?utm_source=generator&theme=0"
+                        width="100%" height="152" frameBorder="0" allowfullscreen=""
+                        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                        loading="lazy">
+                    </iframe>
+                </div>
+            </div>
+
+            <!-- Stats Section -->
+            <div class="stats-section glass-panel">
+                <div class="stat-card">
+                    <div class="stat-icon">🍅</div>
+                    <div class="stat-value" id="pomodorosCompleted">0</div>
+                    <div class="stat-label">Pomodoros Today</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">⏱️</div>
+                    <div class="stat-value" id="totalTime">0h</div>
+                    <div class="stat-label">Total Focus Time</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">🔥</div>
+                    <div class="stat-value" id="streak">0</div>
+                    <div class="stat-label">Day Streak</div>
+                </div>
+            </div>
+
+            <!-- To-Do List Section -->
+            <div class="todo-section glass-panel">
+                <div class="todo-header">
+                    <h2>
+                        <svg class="todo-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9 11L12 14L22 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path
+                                d="M21 12V19C21 20.1046 20.1046 21 19 21H5C3.89543 21 3 20.1046 3 19V5C3 3.89543 3.89543 3 5 3H16"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                        Focus Tasks
+                    </h2>
+                    <span class="todo-count" id="todoCount">0 tasks</span>
+                </div>
+
+                <div class="todo-input-container">
+                    <input type="text" id="todoInput" class="todo-input" placeholder="What do you want to accomplish?"
+                        maxlength="100" />
+                    <button class="todo-add-btn" id="addTodoBtn">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                        </svg>
+                        Add
+                    </button>
+                </div>
+
+                <ul class="todo-list" id="todoList">
+                    <!-- To-do items will be added here dynamically -->
+                </ul>
+
+                <div class="todo-empty" id="todoEmpty">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" />
+                        <path d="M8 12L11 15L16 9" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                    <p>No tasks yet. Add your first focus task above!</p>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Built with focus and precision</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
