@@ -1,106 +1,89 @@
-# 🍅 Pomodoro Focus Timer - Desktop Application
+# 🍅 EM Me Focus - Premium Productivity Suite & Mobile App
 
-## ස්ථාපනය (Installation)
+<p align="center">
+  <img src="logo_new.png" width="120" height="120" style="border-radius: 50%; box-shadow: 0 0 20px rgba(0, 240, 255, 0.5);" alt="EM Me Focus Logo">
+</p>
 
-මේ desktop application එක භාවිතා කරන්න **කිසිම software එකක් install කරන්න ඕන නෑ!** 
-This desktop application works **WITHOUT installing any additional software!**
+**EM Me Focus** is a state-of-the-art, high-end single-page productivity suite and a fully packaged native Android Mobile Application. Designed with futuristic space-grade Glassmorphism aesthetics, it features real-time spatial binaural audio synthesizers, customizable focus targets, micro-animations, and complete offline capability.
 
----
-
-## භාවිතය (How to Use)
-
-### Method 1: Double-Click Launch (Easy!)
-1. **Double-click** මේ file එක: `Launch Pomodoro Timer.bat`
-2. Desktop application එක automatically open වෙයි!
-
-### Method 2: Direct Launch
-1. **Double-click** මේ file එක: `PomodoroTimer.hta`
-2. Timer එක desktop window එකක open වෙයි!
+**EM Me Focus** යනු අනාගතවාදී (futuristic) Glassmorphism මෝස්තරයකින් නිමවා ඇති, උසස් මට්ටමේ single-page productivity web application එකක් සහ ජංගම දුරකථන සඳහාම නිපදවන ලද native Android App (APK) එකකි. 
 
 ---
 
-## විශේෂාංග (Features)
+## 🌟 Key Features / ප්‍රධාන විශේෂාංග
 
-✅ **Custom Timer Settings** - Hours සහ Minutes set කරන්න පුළුවන්
-✅ **Beautiful Circular Progress** - Animated progress ring
-✅ **Fullscreen Mode** - Distraction-free focus mode
-✅ **Ambient Rain Sounds** - Focus වෙන්න rain sounds
-✅ **Spotify Integration** - Focus music play කරන්න
-✅ **To-Do List** - Tasks track කරන්න
-✅ **Statistics Tracking** - Pomodoros, time, streaks track කරයි
-✅ **Desktop Notifications** - Timer complete වෙද්දී alerts
+### 1. Space-Grade UI/UX & Multi-Themes
+- **5 Dynamic Gradient Themes**: Instantly change color tokens, moving glow blobs, and progress fills:
+  - 🌌 **Cosmic Aurora** (Default - purple/cyan aura)
+  - 🌅 **Sunset Dream** (Warm peach-coral-pink sunset gradient)
+  - ⚡ **Cyberpunk Grid** (Vibrant neon magenta/cyan cyber vibes)
+  - 🌲 **Midnight Forest** (Relaxing emerald-teal nature gradient)
+  - 🌊 **Ocean Deep** (Refreshing aquamarine/indigo ocean breeze)
+- **Glowing Orbit Particle**: A rotating glowing orb particle that orbits at the exact tip of the circular progress ring in real-time.
+- **Heartbeat countdown**: Subtle pulsing effects on the timer text when focusing is active.
 
----
+### 2. Binaural Synthesized Audio Mixer (Web Audio API)
+Generates high-quality, scientifically calibrated background frequencies directly in your browser or mobile phone without requiring heavy audio files:
+- 🌧️ **Binaural Rain**: Wet, organic filtered noise with dynamic amplitude drift.
+- 🌊 **Ocean Waves**: Modulated pink noise using a slow LFO for realistic tide swellings.
+- 🌲 **Forest Wind**: Dynamic bandpass-filtered noise swept gently over forest wind frequencies.
+- 🔇 **Pure Focus Pink Noise**: Voss-McCartney filtered frequencies for pure concentration.
+- **Dynamic Mixer**: Independent volume sliders and toggles to mix your perfect focus sound.
 
-## ගැටළු විසඳීම (Troubleshooting)
-
-### Application එක open වෙන්නේ නෑ?
-- Windows Security warning එකක් එනවා නම්, **"Run anyway"** click කරන්න
-- Right-click කරලා **"Open"** select කරන්න
-
-### Spotify player එක load වෙන්නේ නෑ?
-- Internet connection එක check කරන්න
-- Browser එකේ open කරලා Spotify login වෙලා තියෙනවද බලන්න
-
----
-
-## Files
-
-- `PomodoroTimer.hta` - Main desktop application
-- `Launch Pomodoro Timer.bat` - Easy launcher
-- `index.html` - Web version (browser එකේ open කරන්න පුළුවන්)
-- `style.css` - Styling
-- `script.js` - Application logic
+### 3. Integrated Focus Suite
+- **Session Preset Chips**: Immediate intervals: `🧠 Focus (25m)`, `☕ Short Break (5m)`, `🌴 Long Break (15m)` with active glowing states.
+- **Accordion Custom Timer**: An expandable panel for custom hours/minutes durations, keeping the main screen minimalist.
+- **Completion Confetti**: A high-performance canvas-based physics confetti celebration triggered upon study target completion.
+- **Interactive Daily Target**: Dynamic metrics tracking (`0 / 4 focus sessions`) with automatic visual fills and motivational praise.
+- **Interactive Focus Tasks (To-Do)**: Add, check, and delete focus items with slide-in entries and strike-through animations.
 
 ---
 
-## System Requirements
+## 📱 Mobile App installation / ඇන්ඩ්‍රොයිඩ් ඇප් එක ස්ථාපනය
 
-- **Operating System**: Windows 7 or higher
-- **Internet**: For Spotify and Google Fonts (optional)
-- **No additional software needed!**
+This project is compiled as a native Android app using a modern Jetpack Compose WebView shell featuring hardware acceleration and zero-pinch touch responsive layouts.
 
----
+මෙම ඇප් එක, ජංගම දුරකථනයට ගැලපෙන Launcher Icon එකක් සහ optimized fullscreen viewport එකක් සහිතව සාර්ථකව Android APK එකක් ලෙස compile කර ඇත.
 
-## Desktop App vs Web Version
+### 📥 How to Install / ස්ථාපනය කරගන්නා ආකාරය:
+1. Copy the installable file **[EM-Me-Focus-v2.apk](EM-Me-Focus-v2.apk)** from your workspace root folder directly to your Android Mobile Phone.
+2. Open the file on your phone and tap **Install** (If asked, allow installation from "Unknown Sources" or your File Manager).
+3. Open the **EM Me Focus** app from your launcher and start focusing with the brand-new icon!
 
-| Feature | Desktop App (.hta) | Web Version (.html) |
-|---------|-------------------|---------------------|
-| Standalone Window | ✅ Yes | ❌ Browser Tab |
-| Always on Top | ✅ Yes | ❌ No |
-| Taskbar Icon | ✅ Yes | ❌ No |
-| Installation Required | ❌ No | ❌ No |
-| Works Offline | ⚠️ Partial | ⚠️ Partial |
+1. ඔබගේ workspace root folder එකෙහි ඇති **[EM-Me-Focus-v2.apk](EM-Me-Focus-v2.apk)** ගොනුව ඔබගේ Android ජංගම දුරකථනයට copy කරගන්න.
+2. ජංගම දුරකථනයෙන් එම file එක open කර **Install** කරන්න (පළමු වරට සිදු කරන්නේ නම් "Unknown Sources" සක්‍රීය කරන්න).
+3. ඔබගේ App Drawer එකෙහි ඇති **EM Me Focus** අයිකනය ක්ලික් කර ඇප් එක විවෘත කරන්න!
 
 ---
 
-## Tips for Best Experience
+## 💻 Web/Desktop Usage / පරිගණක භාවිතය
 
-1. **Pin to Taskbar**: Right-click launcher → Pin to taskbar
-2. **Create Desktop Shortcut**: Right-click `Launch Pomodoro Timer.bat` → Send to → Desktop
-3. **Focus Mode**: Use fullscreen mode for distraction-free work
-4. **Set Custom Times**: Adjust hours and minutes for different work sessions
+### Direct Launch:
+- Simply double-click the **[index.html](index.html)** file inside your main folder to open the upgraded focus timer instantly in any modern web browser.
+- **Offline first**: Works 100% offline without needing any internet connection or servers!
 
----
-
-## Technical Details
-
-This is an **HTA (HTML Application)** - a Windows-native format that runs HTML/CSS/JavaScript as a desktop application using Internet Explorer's rendering engine (built into Windows).
-
-**Advantages:**
-- ✅ No installation required
-- ✅ Native Windows application
-- ✅ Small file size
-- ✅ Works on all Windows versions
-- ✅ No dependencies
+- ප්‍රධාන ෆෝල්ඩරයේ ඇති **[index.html](index.html)** ගොනුව ඕනෑම browser එකකින් (Chrome, Firefox, Edge) open කර සෘජුවම භාවිතා කරන්න. 
+- **100% Offline**: කිසිම අන්තර්ජාල සම්බන්ධතාවයකින් තොරව ක්‍රියාත්මක වේ!
 
 ---
 
-## Support
+## ⌨️ Keyboard Shortcuts / කෙටිමං
 
-මෙම application එක භාවිතා කරන්න ගැටළු තියෙනවා නම්, කරුණාකර කියන්න!
-If you have any issues using this application, please let me know!
+Optimize your workspace without touching your mouse:
+- **`Spacebar`** - Start or Pause the focus timer.
+- **`R Key`** - Reset the timer (when paused).
+- **`F Key`** - Open/Exit the distraction-free Fullscreen Focus View.
+- **`1 / 2 / 3`** - Toggle Presets: Focus (25m), Short Break (5m), and Long Break (15m).
 
 ---
 
-**Built with ❤️ for productivity**
+## 🛠️ Tech Stack & Architecture
+
+- **Web Frontend**: HTML5 semantic layers, Vanilla CSS3 Custom Variables, JavaScript ES6.
+- **Audio Synthesizer**: Web Audio API oscillator nodes, gain nodes, and dynamic BiquadFilters.
+- **Animations**: Canvas 2D render loop, CSS keyframes, and cubic-bezier transitions.
+- **Android Shell**: Kotlin, Android SDK 34 (Target 36), Jetpack Compose WebView interops with hardware layers.
+
+---
+
+**Crafted with focus, beauty, and scientific precision 🍅**
